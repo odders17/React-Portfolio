@@ -1,7 +1,7 @@
 {
   "name": "react-portfolio",
   "version": "0.1.0",
-  "homepage": "https://odders17.github.io/react-portfolio/",
+  "homepage": "https://odders17.github.io/React-Portfolio/",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.3",
