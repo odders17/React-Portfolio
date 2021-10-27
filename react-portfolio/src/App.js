@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, BrowserRouter, Switch } from 'react-router-dom';
+//import { Route } from 'react-router-dom';
+import Nav from './components/Nav';
+import Footer from './components/Footer';
+import About from "./components/pages/About";
+import Contact from "./components/pages/Contact";
+import Portfolio from "./components/pages/Portfolio";
+import Resume from "./components/pages/Resume";
 
+
+  
 function App() {
+
+  document.body.style.backgroundColor = '#d8e1ff';
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div id='app'>
+      
+      <BrowserRouter basename={ process.env.PUBLIC_URL }>
+      <Nav />
+      <Switch>
+      <Route path='/' exact component={ About }></Route> 
+      <Route path='/portfolio' component={ Portfolio } ></Route>
+      <Route path='/contact' component={ Contact }></Route>
+      <Route path='/resume'component={ Resume }></Route>
+      <Route component = { About }></Route>
+      </Switch>
+      <Footer />
+      </BrowserRouter>
     </div>
   );
 }
 
 export default App;
+
+
+
